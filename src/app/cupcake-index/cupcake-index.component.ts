@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cupcake-index',
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class CupcakeIndexComponent {
 
+  constructor(private cupcake: Router) {
+  }
+
+  cupcakeCount(count: number):void{
+    const bundleChoice = count * 2;
+    this.cupcake.navigate(['/order'], {queryParams: {count: bundleChoice}});
+  }
 }
