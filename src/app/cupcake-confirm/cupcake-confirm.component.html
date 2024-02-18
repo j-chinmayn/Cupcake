@@ -1,7 +1,9 @@
 <h1>Order Summary</h1>
-
 <p>
-  <span class="cupcakePrice">{{bundleChoice | currency}}</span><br>
+  <a routerLink="/order">&#x2190; Back</a>
+</p>
+<p>
+  <span class="cupcakePrice">Subtotal: {{bundleChoice | currency}}</span><br>
   <span class="label">Cupcake choice:</span> {{userPreference.cupcakeChoice}}
 </p>
 
