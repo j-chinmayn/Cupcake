@@ -10,8 +10,8 @@
   <label><input type="radio" name="choice"
                 (click)="setCupcakeChoice(CupcakeChoice.COFFEE)"> Coffee</label>
 </p>
-
-<!--<span class="cupcake_price">{{ | currency}}</span>-->
+<p></p>
+<span class="cupcakePrice">{{bundleChoice | currency}}</span>
 <p>
   <a routerLink="/">Cancel</a>&nbsp;
   <a routerLink="/confirm">Next</a>

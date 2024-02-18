@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {BundleChoiceService} from "../bundle-choice.service";
 
 @Component({
   selector: 'app-cupcake-index',
@@ -10,11 +11,12 @@ import {Router} from "@angular/router";
 })
 export class CupcakeIndexComponent {
 
-  constructor(private cupcake: Router) {
+  constructor(public cupcake: Router, public bundleChoiceService: BundleChoiceService) {
   }
 
   cupcakeCount(count: number):void{
     const bundleChoice = count * 2;
+    this.bundleChoiceService.setBundleChoice(bundleChoice);
     this.cupcake.navigate(['/order'], {queryParams: {count: bundleChoice}});
   }
 }
